@@ -1,0 +1,46 @@
+Using DrRacket 8.11.1 with language set to R5RS
+woith vim-slime:
+    :term      to open a connected CLI window
+    > guile    to start guile (scheme) REPL there
+    in editor window, put cursor in S-expression and ^C^C to send it 
+   
+   (* 3 9)
+
+Lecture notes:
+(I'll not copy everything, just what seems new)
+MIT_6.001-spring-2005/resources/1a-overview-and-introduction-to-lisp/index.html
+
+  Abstractions:
+    Black-box
+    Conventional
+    Meta-Linguistic
+
+  1a: Intro to LISP
+    (01_intro.scm)
+    Combinations using ( )
+    Abstraction with define (two ways)
+    (define square (lambda (x) (* x x)))
+    (define (square x) (* x x))     <syntactic sugar for first form>
+  1b: Intro to LISP, cont.d
+    Kinds of expressions
+      Numbers
+      Sympols
+      Lambda expressions
+      Definitions
+      Conditionals
+      Combinations
+    Substitution Model for Combinations
+      Evaluate operator to get procedure
+      Evaluate operands to get arguments
+      Apply procedure to arguments:
+         Copy body of combination, substituting the arguments
+            for the formal parameters
+         Evaluate the new combination
+      if predicate consequent alternative
+    Recursive programs MAY generate iterative processes.
+
+    Fibonacci Number example
+      
+
+
+
