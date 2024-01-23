@@ -1,4 +1,4 @@
-                                                                                 ;;; Project 1, 6.001, Spring 2005;;; idea is to simulate a baseball robot
+;;; Project 1, 6.001, Spring 2005;;; idea is to simulate a baseball robot
 ;; imagine hitting a ball with an initial velocity of v 
 ;; at an angle alpha from the horizontal, at a height h
 ;; we would like to know how far the ball travels.
@@ -20,6 +20,12 @@
 ;; y(t)=0 (i.e. for what t_impact is y(t_impact)= 0).
 ;; note that there are two solutions, only one makes sense physically
 
+;; Useful for testing
+(define (~ x y)
+  (if (= y 0)
+      (< (abs x) 0.01)
+      (< (abs (- 1 (/ x y) 0.01)))))
+
 (define square
   (lambda (x) (* x x)))
 
@@ -36,12 +42,13 @@
     (+ (* v (sin a) t) h  (* -0.5 gravity (square t)))))
 
 ;; you need to complete this procedure, then show some test cases
-
-(position 0 0 0 0)
-(position 0 0 20 0)
-(position 0 5 10 10)
-(position 2 2 2 2)
-(position 5 5 5 5)
+;;; TODO Turn these into actuall tests. E.g.; does (position 5 5 5 5) actually
+;;; equal -146.47?(
+(~ 0 (position 0 0 0 0))
+(~ 0 (position 0 0 20 0))
+(~ -490 (position 0 5 10 10))
+(~ -16 (position 2 2 2 2))
+(~ -146.5 (position 5 5 5 5))
 
 
 ;; Problem 2
@@ -52,8 +59,8 @@
 
 (define root2
   (lambda (a b c)
-;;    YOUR-CODE-HERE))
-))
+    ;;    YOUR-CODE-HERE))
+    ))
 
 ;; complete these procedures and show some test cases
 
@@ -61,16 +68,16 @@
 
 (define time-to-impact
   (lambda (vertical-velocity elevation)
-;;    YOUR-CODE-HERE))
-))
+    ;;    YOUR-CODE-HERE))
+    ))
 
 ;; Note that if we want to know when the ball drops to a particular height r 
 ;; (for receiver), we have
 
 (define time-to-height
   (lambda (vertical-velocity elevation target-elevation)
-;;    YOUR-CODE-HERE))
-))
+    ;;    YOUR-CODE-HERE))
+    ))
 
 ;; Problem 4
 
@@ -83,8 +90,8 @@
 
 (define travel-distance-simple
   (lambda (elevation velocity angle)
-;;    YOUR-CODE-HERE))
-))
+    ;;    YOUR-CODE-HERE))
+    ))
 
 ;; let's try this out for some example values.  Note that we are going to 
 ;; do everything in metric units, but for quaint reasons it is easier to think
@@ -129,8 +136,8 @@
 
 (define find-best-angle
   (lambda (velocity elevation)
-;;    YOUR-CODE-HERE))
-))
+    ;;    YOUR-CODE-HERE))
+    ))
 
 ;; find best angle
 ;; try for other velocities
@@ -207,12 +214,12 @@
 
 (define integrate
   (lambda (x0 y0 u0 v0 dt g m beta)
-;;    YOUR-CODE-HERE))
-))
+    ;;    YOUR-CODE-HERE))
+    ))
 
 (define travel-distance
-;;  YOUR-CODE-HERE)
-)
+  ;;  YOUR-CODE-HERE)
+  )
 
 
 ;; RUN SOME TEST CASES
